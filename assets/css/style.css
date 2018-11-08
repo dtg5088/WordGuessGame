@@ -4,6 +4,8 @@ body {
 
 .container {
     background-color: rgb(71, 71, 71);
+    padding: 30px 50px;
+    
 
 }
 
@@ -16,11 +18,11 @@ h1 {
 }
 
 .wordSpace {
-    margin: 10px;
     border: 2px solid black;
     padding: 3px;
     background-color: lightgray;
     width: auto;
+    height: 200px;
 }
 
 button {
