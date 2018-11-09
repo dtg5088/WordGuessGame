@@ -14,68 +14,64 @@ function startFunction (){
     var randomNum = Math.floor((Math.random() * genre.length));
     var randomGenre = genre[randomNum];
 
-    // pulls genre type randomly for game use then writing text onto the screen
-    startPrompt.textContent = randomGenre;
-    
-    //Sorting Genre to allow genre picks to read correct keys 
-    if (genre === "Romantic Comedy"){
-        randomGenre == genrePicks.RomanticComedy();
-    } else if (genre === "Horror"){
-        randomGenre == genrePicks.Horror();
-    } else if (genre === "SciFi"){
-        randomGenre == genrePicks.SciFi();
-    } else if (genre === "Action"){
-        randomGenre == genrePicks.Action();
-    } else if (genre === "Mystery"){
-        randomGenre == genrePicks.Mystery();
-    }else
+    // array for movies ansers
+    var movies = ["hitch", "the proposal", "bridesmaids", "clueless", "big stick"];
+    var randomNum = Math.floor((Math.random() * movies.length));
+    var choosenMovie = movies[randomNum];
+    var choosenMovieArr = [];
+    var rightLetters = [];// used to be underscore
+    var wrongLetters = [];
+    var underscore = [];
+    for (var i=0; i <choosenMovie.length; i++){  var charString = choosenMovie.charAt(i); choosenMovieArr.push(charString)}
+    console.log(choosenMovieArr);
 
-
-   var genrePicks = {
-
-        RomanticComedy: function (){
-            // array for movies ansers
-            var movies = ["Hitch", "The Proposal", "Bridesmaids", "Clueless", "Big Stick"];
-            var randomNum = Math.floor((Math.random() * movies.length));
-            var choosenMovie = movies[randomNum];
-            var underscore = [];
-
-            //for loop to get the undersore patterns for user answers
-            for (var i = 0; i<choosenMovie.length; i++){
-                underscore.push(' _ ');
-            }
-            return underscore;
-        },
-
-        Horror: function (){},
-        SciFi: function (){},
-        Action: function (){},
-        Mystery: function (){}
-    }
-
-    // This function only runs in a genre function
-    function generateUnderscore(movies){
-        var randomNum = Math.floor((Math.random() * movies.length));
-        var choosenMovie = movies[randomNum];
-        var underscore = [];
-
+    //for loop to get the undersore patterns for user answers
+    function generateUnderscore (){
         for (var i = 0; i<choosenMovie.length; i++){
-            underscore.push('_');
+            underscore.push(' _ ');
         }
         return underscore;
     }
 
+    document.onkeyup = function(event) {
+        var key = event.key;
+        var i = 0;
+
+                for (i = 0; i < choosenMovie.length; i++) {
+                var charCheck = choosenMovie.charAt(i);
+                
+                if (charCheck === key){
+                    rightLetters.push(key);
+                    underscore[i]=key;
+                }else {
+                    wrongLetters.push(key);
+                }
+
+                console.log(rightLetters);
+                console.log(choosenMovieArr);
+                console.log(underscore);
+                console.log(choosenMovie);
+            }
+            
+           
 
 
 
-
-
+            //userAnswer.textContent = answer;
+            console.log(i)
+        //console.log(charString);
+        console.log(key);
+        userAnswer.textContent = event.underscore;
+        return underscore;
+    }
 
     // brings JavaScript back into HTML (NEEDS TO BE ABLE PICK MOVIES IN EACH CATAGORY)
-    userAnswer.textContent= genrePicks.RomanticComedy();
+    // pulls genre type randomly for game use then writing text onto the screen
+    startPrompt.textContent = "Romantic Comedy";//randomGenre;
+    userAnswer.textContent = generateUnderscore();
     
     //test log
     console.log(startPrompt);
-
+    
 
 }
