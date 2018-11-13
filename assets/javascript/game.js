@@ -7,8 +7,7 @@ var correct = document.getElementById("wins");
 var wrong = document.getElementById("losses");
 var startPrompt = document.getElementById("startPrompt");
 var tries = document.getElementById("tries");
-var showButton = document.getElementById("display");
-var buttonElement = document.createElement("button");
+var movieImage = document.getElementById("movieImage");
 
 //declaring variables
 var userGuessPar = "";
@@ -17,14 +16,17 @@ var wrongWords = 0;
 var attempts = 7; // user tries
 
 function startFunction (){
-
+   
     // Starting prompt variables
     var genre = ["Romantic Comedy", "Horror", "SciFi", "Action", "Mystery"];
     var randomNum = Math.floor((Math.random() * genre.length));
     var randomGenre = genre[randomNum];
     
-    // array for movies ansers (11 MOVIES)
-    var movies = ["HITCH", "THE PROPOSAL", "BRIDESMAIDS", "CLUELESS", "BIG STICK", "LOVE ACTUALLY", "CRAZY RICH ASIANS", "BOOMERANG", "LOVE JONES", "MOONLIGHT", "THE BEST MAN"];
+    // array for movies ansers (10 MOVIES)
+    var movies = ["HITCH", "THE PROPOSAL", "BRIDESMAIDS", 
+                "SUPER BAD", "WHITE CHICKS", "PULP FICTION", 
+                "STEP BROTHERS", "HARLEM NIGHTS", 
+                "BAD SANTA", "BAD BOYS"];
     var randomNum = Math.floor((Math.random() * movies.length));
     var choosenMovie = movies[randomNum];
     var choosenMovieArr = [];
@@ -34,10 +36,30 @@ function startFunction (){
     console.log(userGuess);
 
     // creating img elements for movie
-    switch (randomNum){
-
-    }
-
+    // movieImage.src = "assets/images/Hitch.jpg";
+   if (randomNum = 0){
+    movieImage.src = "assets/images/Hitch.jpg";
+   }else if (randomNum = 1){
+    movieImage.src = "assets/images/theProposal.jpg";
+   }else if (randomNum = 2){
+    movieImage.src = "assets/images/bridesmaid.jpg";
+   }else if (randomNum = 3){
+    movieImage.src = "assets/images/superbad.jpg";
+   }else if (randomNum = 4){
+    movieImage.src = "assets/images/whiteChicks.jpg";
+   }else if (randomNum = 5){
+    movieImage.src = "assets/images/pulpFiction.jpg";
+   }else if (randomNum = 6){
+    movieImage.src = "assets/images/stepBrothers.jpg";
+   }else if (randomNum = 7){
+    movieImage.src = "assets/images/harlemNights.jpg";
+   }else if (randomNum = 8){
+    movieImage.src = "assets/images/badSanta.jpg";
+   }else if (randomNum = 9){
+    movieImage.src = "assets/images/badBoys.jpg";
+   } else{}
+   console.log(randomNum)
+   console.log(movieImage)
 
     // this gets the chosenMovie array of letters
     for (var i=0; i <choosenMovie.length; i++){  var charString = choosenMovie.charAt(i); choosenMovieArr.push(charString)}
@@ -100,32 +122,22 @@ function startFunction (){
     userAnswer.textContent = userGuess;
     if (attempts < 1 ){
         wrongWords++;
-        userAnswer.textContent = "Sorry the correct answer is "+ choosenMovie;
-        
+        if (attempts === 0 ){
         lose();
-        /*if (attempts === 0 ){
-            
-            attempts = 7;
-            wrongLetters = [];
-            guessedLetters.textContent = wrongLetters;
-            tries.textContent = attempts;
-            
-        }*/
+        }
     }
     
     
 
     function lose(){
-        var buttonElement = document.createElement("button");
-        if (attempts === 0 ){
-            attempts = 7;
-            wrongLetters = [];
-            guessedLetters.textContent = wrongLetters;
-            tries.textContent = attempts;
-            var t = document.createTextNode("click me to play agian");
-            buttonElement.appendChild(t);
-            buttonElement.addEventListener ("click",  function(){showButton.remove(buttonElement); startFunction();});
-            showButton.appendChild(buttonElement);
+    alert("Sorry you guessed poorly... The answer was "+ choosenMovie);
+    var conf = confirm("Would you like to play again?");
+    if (conf === true){
+        attempts = 7;
+        wrongLetters = [];
+        guessedLetters.textContent = wrongLetters;
+        tries.textContent = attempts;
+        startFunction();
     }
 }
 
@@ -149,5 +161,5 @@ function startFunction (){
     }
 
     //prompt that displays the genre user will be guessing
-    startPrompt.textContent = "Romantic Comedy";//randomGenre;
+    startPrompt.textContent = "Comedies";//randomGenre;
 }
