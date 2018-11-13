@@ -14,23 +14,22 @@
         <h3> Would you like to play the Word Guess Game? <button onclick="startFunction()"> Click Me To Start!</button></h2>
             <h5>Your Genre is: <span id="startPrompt"></span></h5>
             <div class="row" >
-                <div class="wordSpace col-md-12" style="height: auto; width: auto; padding: 5px;">
-                    <h5>Can you guess what movie this scene is from? <br> <span id="hints"><img id="movieImage" src="assets/images/default.jpg" alt="" style="height: 250px;"></span></h5>
+                <div class="wordSpace col-md-7" style="height: auto; width: 100%; padding: 5px;">
+                    <h3>Can you guess what movie this scene is from? <br> <span id="hints"><img id="movieImage" src="assets/images/default.jpg" alt="" style="height: auto; width: 100%"></span></h3>
+                </div>
+                <div class="wordSpace col-md-5" >
+                    <h3>letters already Guessed: <br> <span id="guessedLetters"></span></h3>
+                    <h3>Attempts left: <br> <span id="tries"></span></h3>
+                    <h3>Your answer: <br> <span id="answer"></span></h3>
+                    <h3><span id="display"></span></h3>
+                    <div class="row" >
+                        <div class="wordSpace" style="margin: 10px; width: 96%;">
+                            <h3>Words Guessed Correctly: <br> <span id="wins"></span></h3>
+                            <h3>Words guessed Wrong: <br> <span id="losses"></span></h3>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row" style="overflow: hidden; width: 100%">
-                <div class="wordSpace col-md-6" >
-                    <h5>letters already Guessed: <br> <span id="guessedLetters"></span></h5>
-                    <h5>Attempts left: <br> <span id="tries"></span></h5>
-                    <h5>Your answer: <br> <span id="answer"></span></h5>
-                    <h5><span id="display"></span></h5>
-                </div>
-                <div class="wordSpace col-md-6">
-                    <h5>Words Guessed Correctly: <br> <span id="wins"></span></h5>
-                    <h5>Words guessed Wrong: <br> <span id="losses"></span></h5>
-                </div>
-            
-        </div>
     </div>
     <script src="assets/javascript/game.js"></script>
 </body>

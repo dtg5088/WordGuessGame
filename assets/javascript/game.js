@@ -33,33 +33,33 @@ function startFunction (){
     var rightLetters = []; // used to be underscore
     var wrongLetters = [];
     var userGuess = [];
-    console.log(userGuess);
+    console.log(randomNum);
 
     // creating img elements for movie
     // movieImage.src = "assets/images/Hitch.jpg";
-   if (randomNum = 0){
+   if (choosenMovie === "HITCH"){
     movieImage.src = "assets/images/Hitch.jpg";
-   }else if (randomNum = 1){
+   }else if (choosenMovie === "THE PROPOSAL"){
     movieImage.src = "assets/images/theProposal.jpg";
-   }else if (randomNum = 2){
+   }else if (choosenMovie === "BRIDESMAIDS"){
     movieImage.src = "assets/images/bridesmaid.jpg";
-   }else if (randomNum = 3){
+   }else if (choosenMovie === "SUPER BAD"){
     movieImage.src = "assets/images/superbad.jpg";
-   }else if (randomNum = 4){
+   }else if (choosenMovie === "WHITE CHICKS"){
     movieImage.src = "assets/images/whiteChicks.jpg";
-   }else if (randomNum = 5){
+   }else if (choosenMovie === "PULP FICTION"){
     movieImage.src = "assets/images/pulpFiction.jpg";
-   }else if (randomNum = 6){
+   }else if (choosenMovie === "STEP BROTHERS"){
     movieImage.src = "assets/images/stepBrothers.jpg";
-   }else if (randomNum = 7){
+   }else if (choosenMovie === "HARLEM NIGHTS"){
     movieImage.src = "assets/images/harlemNights.jpg";
-   }else if (randomNum = 8){
+   }else if (choosenMovie === "BAD SANTA"){
     movieImage.src = "assets/images/badSanta.jpg";
-   }else if (randomNum = 9){
+   }else if (choosenMovie === "BAD BOYS"){
     movieImage.src = "assets/images/badBoys.jpg";
    } else{}
-   console.log(randomNum)
-   console.log(movieImage)
+   console.log(randomNum);
+   console.log(movieImage);
 
     // this gets the chosenMovie array of letters
     for (var i=0; i <choosenMovie.length; i++){  var charString = choosenMovie.charAt(i); choosenMovieArr.push(charString)}
